@@ -35,7 +35,7 @@ function TrackerForm() {
   };
 
   return (
-    <div>
+    <div style={{marginTop:"25px"}}>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Paid Items</Form.Label>
@@ -89,70 +89,6 @@ function TrackerForm() {
           <option value="miscellaneous">Miscellaneous</option>
         </select>
         <br />
-
-        {/* <label>
-          Category
-          <br />
-          <label>
-            <input
-              name="category"
-              type="radio"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
-            Food and Drink
-          </label>
-          <br />
-          <label>
-            <input
-              name="category"
-              type="radio"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
-            Accommodation
-          </label>
-          <br />
-          <label>
-            <input
-              name="category"
-              type="radio"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
-            Transportation
-          </label>
-          <br />
-          <label>
-            <input
-              name="category"
-              type="radio"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
-            House and Renting
-          </label>
-          <br />
-          <label>
-            <input
-              name="category"
-              type="radio"
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            />
-            Miscellaneous
-          </label>
-        </label> */}
         <br />
         <Button variant="primary" type="submit">
           Save

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Dancing+Script&family=Lobster+Two&display=swap');
+
+.Nav{
+}
+
+.Row-nav>:nth-child(2){
+  text-align: center;
+}
+.span1{
+  font-family: 'Dancing Script', cursive;
+  font-size: 70px;
+}
+.span2{
+  font-family: 'Architects Daughter', cursive;
+  font-size: 30px;
+}

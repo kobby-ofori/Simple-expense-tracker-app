@@ -14,7 +14,7 @@ const TrackerList = () => {
     <Container>
       <Row>
         <Col md="12">
-          <h1>Note List</h1>
+          <h1>Expenses</h1>
 
           {state.expenses.map((expense) => {
             return (

@@ -138,13 +138,14 @@ const NoteModal = (props) => {
           <Card.Title>{expense.amount}</Card.Title>
           <Card.Text>{expense.items}</Card.Text>
 
-          <Button onClick={handleModal}>Edit</Button>
+          <Button onClick={handleModal} style={{marginRight:"15px"}}>Edit</Button>
           <Button onClick={handleDelete} variant="danger">
             Delete
           </Button>
         </Card.Body>
         <Card.Footer className="text-muted">{expense.date}</Card.Footer>
       </Card>
+      <br/>
     </div>
   );
 };

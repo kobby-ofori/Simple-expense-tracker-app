@@ -1,0 +1,10 @@
+.App{
+  background-color: rgba(30, 30, 148, 0.562);
+  height: 100%;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
