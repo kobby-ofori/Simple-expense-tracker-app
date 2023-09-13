@@ -16,7 +16,7 @@ function App() {
           <Col md="6" xs="12">
             <TrackerForm />
           </Col>
-          <Col md="6" xs="12">
+          <Col md="6" xs="12" className="TrackerLists-col">
             <TrackerList />
           </Col>
         </Row>

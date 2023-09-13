@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addTracker } from "../slices/trackerSlice";
 import { v4 as uuidv4 } from "uuid";
+import { HiSaveAs } from 'react-icons/hi';
 
 function TrackerForm() {
   const dispatch = useDispatch();
@@ -12,9 +13,16 @@ function TrackerForm() {
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if any of the fields are empty
+    if (!items || !date || !amount || !category) {
+      setErrorMessage("Please fill in all fields.");
+      return; // Exit early if any field is empty
+    }
 
     const newExpense = {
       id: uuidv4(),
@@ -28,14 +36,17 @@ function TrackerForm() {
 
     dispatch(addTracker(newExpense));
 
+    // Clear input fields and error message
     setItems("");
     setDate("");
     setAmount("");
     setCategory("");
+    setErrorMessage("");
   };
 
   return (
     <div style={{marginTop:"25px"}}>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>Paid Items</Form.Label>
@@ -82,6 +93,7 @@ function TrackerForm() {
             setCategory(e.target.value);
           }}
         >
+          <option value="choose"></option>
           <option value="food">Food and Drink</option>
           <option value="accommodation">Accommodation</option>
           <option value="transportation">Transportation</option>
@@ -91,7 +103,7 @@ function TrackerForm() {
         <br />
         <br />
         <Button variant="primary" type="submit">
-          Save
+          <HiSaveAs/>
         </Button>
       </Form>
     </div>

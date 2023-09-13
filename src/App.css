@@ -1,10 +1,26 @@
 .App{
   background-color: rgba(30, 30, 148, 0.562);
-  height: 100%;
+  height: inherit;
   padding-top: 25px;
   padding-bottom: 30px;
 }
 
 ::-webkit-scrollbar{
   display: none;
+}
+
+/* @media (min-width: 1200px) {
+  .App{
+    height: inherit;
+  }
+} */
+
+@media (max-width: 768px) {
+  .App{
+    height: inherit;
+  }
+
+  .TrackerLists-col{
+    padding-top: 10%;
+  }
 }

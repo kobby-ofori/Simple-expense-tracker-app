@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Button, Card, Form, Modal } from "react-bootstrap";
 import { editTracker, deleteTracker } from "../slices/trackerSlice";
 import { useDispatch } from "react-redux";
+import { CiEdit } from 'react-icons/ci';
+import { MdAutoDelete } from "react-icons/md";
+import { FaWindowClose, FaSave } from "react-icons/fa";
 
 const NoteModal = (props) => {
   const { expense } = props;
@@ -121,10 +124,10 @@ const NoteModal = (props) => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleModal}>
-            Close
+            <FaWindowClose/>
           </Button>
           <Button variant="primary" onClick={handleSubmit}>
-            Save
+            <FaSave/>
           </Button>
         </Modal.Footer>
       </Modal>
@@ -138,9 +141,9 @@ const NoteModal = (props) => {
           <Card.Title>{expense.amount}</Card.Title>
           <Card.Text>{expense.items}</Card.Text>
 
-          <Button onClick={handleModal} style={{marginRight:"15px"}}>Edit</Button>
+          <Button onClick={handleModal} style={{marginRight:"15px"}}><CiEdit/></Button>
           <Button onClick={handleDelete} variant="danger">
-            Delete
+            <MdAutoDelete/>
           </Button>
         </Card.Body>
         <Card.Footer className="text-muted">{expense.date}</Card.Footer>
